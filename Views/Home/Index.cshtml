@@ -1,0 +1,33 @@
+﻿@model User
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Login</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-area="" asp-controller="Home" asp-action="Register">Need To Register?</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Login</h1>
+<form asp-action="Login" method="post">
+    <span>@ViewBag.Errors</span><br>
+    <label>Username:</label>
+    
+    <input type="text" name="username">
+    <br>
+
+    <label asp-for="Password"></label>
+    <input type="password" name="password">
+    <br>
+
+    <input type="submit" value="Submit">
+</form>

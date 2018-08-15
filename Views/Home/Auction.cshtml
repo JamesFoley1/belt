@@ -1,0 +1,45 @@
+@model Auction
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <ul class="nav navbar-nav pull-right">
+            <li><a asp-area="" asp-controller="Home" asp-action="Dashboard">Home</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h1>@Model.Name</h1>
+<label>Created By: @Model.User.FirstName @Model.User.LastName</label>
+<hr>
+    @{
+        TimeSpan span = (@Model.EndDate - DateTime.Now);
+
+    String.Format("{0} days, {1} hours, {2} minutes, {3} seconds", 
+        span.Days, span.Hours, span.Minutes, span.Seconds);
+    }
+<label>Time Remaining: @span.Days Days @span.Hours Hours @span.Minutes Minutes</label><br>
+<label>Description: @Model.Description</label><br>
+@if(@Model.Bids.Count > 0){
+    int idx = 0;
+    double max = @Model.Bids[0].bid;
+    foreach(var bid in  @Model.Bids){
+        idx++;
+    }
+    idx -= 1;
+    <label>Current Highest Bid: @Model.Bids[idx].User.FirstName</label>;
+    
+    
+    <p>$ @Model.StartingBid</p>
+}
+else {
+    <Label>Starting Bid Amount</Label>
+    <p>$@Model.StartingBid</p>
+}
+
+<form asp-action="NewBid" method="post">
+    <span>@TempData["Error"]</span><br>
+    <input type="number" step="0.01" name="newbid">
+    <input type="hidden" name="Id" value="@Model.Id">
+    <input type="submit" value="Bid">
+</form>
+

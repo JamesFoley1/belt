@@ -1,0 +1,11 @@
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/bin/Debug/netcoreapp2.0/Belt.deps.json
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/bin/Debug/netcoreapp2.0/Belt.runtimeconfig.json
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/bin/Debug/netcoreapp2.0/Belt.runtimeconfig.dev.json
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/bin/Debug/netcoreapp2.0/Belt.dll
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/bin/Debug/netcoreapp2.0/Belt.pdb
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/obj/Debug/netcoreapp2.0/Belt.csprojResolveAssemblyReference.cache
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/obj/Debug/netcoreapp2.0/Belt.csproj.CoreCompileInputs.cache
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/obj/Debug/netcoreapp2.0/Belt.AssemblyInfoInputs.cache
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/obj/Debug/netcoreapp2.0/Belt.AssemblyInfo.cs
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/obj/Debug/netcoreapp2.0/Belt.dll
+/Users/PickleRick/Desktop/CD_C#/week_3/Belt/obj/Debug/netcoreapp2.0/Belt.pdb

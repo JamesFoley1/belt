@@ -1,0 +1,47 @@
+@model RegisterUser
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Login</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-area="" asp-controller="Home" asp-action="Register">Need To Register?</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Register</h1>
+<form asp-action="Register" asp-controller="Home" method="post">
+    <span asp-validation-for="FirstName"></span><br>
+    <label asp-for="FirstName"></label>
+    <input type="text" asp-for="FirstName">
+    <br>
+
+    <span asp-validation-for="LastName"></span><br>
+    <label asp-for="LastName"></label>
+    <input type="text" asp-for="LastName">
+    <br>
+
+    <span asp-validation-for="UserName"></span><br>
+    <label asp-for="UserName"></label>
+    <input type="text" asp-for="UserName">
+    <br>
+
+    <span asp-validation-for="Password"></span><br>
+    <label asp-for="Password"></label>
+    <input type="password" asp-for="Password">
+    <br>
+
+    <span asp-validation-for="PasswordConfirm"></span><br>
+    <label>Confirm Password</label>
+    <input type="password" asp-for="PasswordConfirm">
+    <br>
+    <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,45 @@
+@model List<Auction>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <ul class="nav navbar-nav pull-left">
+            <li><label class="white center">Welcome <a asp-area="" asp-controller="Home" asp-action="Dashboard">@ViewBag.user.FirstName</a></label></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<h1>Wallet: $@ViewBag.user.Wallet</h1>
+<h1>Current Auctions</h1>
+
+<table class="table table-responsive table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Seller</th>
+            <th>Top Bid</th>
+            <th>Time Remaining</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var auction in @Model){
+            <tr>
+                <td><a href="Auction/@auction.Id">@auction.Name</a></td>
+                <td>@auction.User.FirstName</td>
+                <td>$@auction.StartingBid</td>
+                @{
+                    TimeSpan span = (@auction.EndDate - DateTime.Now);
+                    String.Format("{0} days, {1} hours, {2} minutes, {3} seconds", 
+                    span.Days, span.Hours, span.Minutes, span.Seconds);
+                }
+                <td>@span.Days Days @span.Hours Hours @span.Minutes Minutes</td>
+                @if(auction.userid == ViewBag.user.Id){
+                    <td><a href="Delete/@auction.Id">Delete</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="NewAuction">New Auction</a>
